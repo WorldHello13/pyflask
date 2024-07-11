@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5MR</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+        }
+        .video {
+            margin: 0 10px;
+            background-color: #000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .video img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .refresh-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .refresh-button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="video">
+            <img src="{{ url_for('video_feed') }}" alt="Video Stream">
+        </div>
+        <div class="video">
+            <img src="{{ url_for('video_feed') }}" alt="Video Stream">
+        </div>
+    </div>
+    <button class="refresh-button" onclick="window.location.reload();">⟳</button>
+
+</body>
+</html>
